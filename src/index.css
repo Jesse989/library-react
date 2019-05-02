@@ -1,0 +1,40 @@
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #343c5a;
+
+}
+
+html, body {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.ui.header {
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+.ui.form .field > label {
+  font-weight: 200;
+}
+
+a {
+  color: #A16F3E;
+}
+
+a:hover {
+  color: #E9D9B1;
+}
