@@ -1,6 +1,5 @@
 
 import React, { Component, Fragment } from 'react';
-import PageContainer from './page-container';
 import { Link } from '@reach/router';
 import { Container, Button, Form, Header, Message, Segment  } from 'semantic-ui-react';
 
@@ -28,7 +27,6 @@ export default class LoginForm extends Component {
 
   render() {
     return (
-      <PageContainer>
       <Segment style={styles.container}>
         <Header style={styles.header} as='h2' textAlign='center'>
            Login to your account
@@ -73,7 +71,6 @@ export default class LoginForm extends Component {
         </Container>
         </Message>
         </Segment>
-      </PageContainer>
     );
   }
 }

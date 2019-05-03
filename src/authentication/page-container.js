@@ -19,6 +19,6 @@ export default class PageContainer extends Component {
 const styles = {
   inner: {
     maxWidth: 550,
-    margin: 14
+    margin: '14px'
   }
 }

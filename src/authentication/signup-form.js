@@ -1,6 +1,5 @@
 
 import React, { Component, Fragment } from 'react';
-import PageContainer from './page-container';
 import { Link } from '@reach/router';
 import { Container, Button, Form, Header, Message, Segment  } from 'semantic-ui-react';
 import isEmail from 'isemail';
@@ -49,7 +48,6 @@ export default class SignupForm extends Component {
 
   render() {
     return (
-      <PageContainer>
       <Segment>
         <Header style={styles.header} as='h2' textAlign='center'>
            Remember which books you read and how they made you feel.
@@ -93,12 +91,11 @@ export default class SignupForm extends Component {
           </Container>
         )}
         <Message>
-        <Container textAlign="center">
-        <p>Already have an account? <Link to='/login'>Sign in</Link></p>
-        </Container>
+          <Container textAlign="center">
+            <p>Already have an account? <Link to='/login'>Sign in</Link></p>
+          </Container>
         </Message>
-        </Segment>
-      </PageContainer>
+      </Segment>
     );
   }
 }
