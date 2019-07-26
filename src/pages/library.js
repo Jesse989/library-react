@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Dimmer, Loader, Header, Card, Segment } from 'semantic-ui-react';
+import { Dimmer, Loader, Header, Card } from 'semantic-ui-react';
 import { BookTile, Error } from '../components';
 
 import { Query } from 'react-apollo';
@@ -27,22 +27,24 @@ export default function Library() {
             <Dimmer active>
               <Loader />
             </Dimmer>
-          )
+          );
         }
         if (error) return <Error />;
 
         return (
           <Fragment>
-            <Header style={styles.header} as='h2'>My library:</Header>
-          <Card.Group divided style={styles.card}>
+            <Header style={styles.header} as="h2">
+              My library:
+            </Header>
+            <Card.Group divided style={styles.card}>
               {data.me && data.me.books.length ? (
                 data.me.books.map(book => (
                   <BookTile key={book.id} book={book} />
                 ))
               ) : (
                 <p>You haven't saved any books yet</p>
-            )}
-          </Card.Group>
+              )}
+            </Card.Group>
           </Fragment>
         );
       }}
@@ -52,9 +54,9 @@ export default function Library() {
 
 const styles = {
   card: {
-    paddingBottom: 98,
+    paddingBottom: 98
   },
   header: {
     paddingLeft: 8
   }
-}
+};

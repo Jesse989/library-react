@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 
 import { BookTile, Error } from '../components';
 
-import { Segment, Dimmer, Card, Header, Loader } from 'semantic-ui-react';
+import { Dimmer, Card, Header, Loader } from 'semantic-ui-react';
 
 export const BOOK_TILE_DATA = gql`
   fragment BookTile on Book {
@@ -27,7 +27,7 @@ export const BOOK_TILE_DATA = gql`
 `;
 
 export const GET_BOOKS = gql`
-  query SearchForBook($query: String!){
+  query SearchForBook($query: String!) {
     findBooks(query: $query) {
       books {
         ...BookTile
@@ -46,20 +46,22 @@ export default function Books({ query }) {
             <Dimmer active>
               <Loader />
             </Dimmer>
-          )
+          );
         }
         if (error) return <Error />;
 
         return (
           <Fragment>
-            <Header style={styles.header} as='h2'>Results for '{query}':</Header>
-          <Card.Group divided style={styles.card} >
-            {data.findBooks &&
-              data.findBooks.books &&
-              data.findBooks.books.map(book => (
-                <BookTile key={book.id} book={book} />
-              ))}
-          </Card.Group>
+            <Header style={styles.header} as="h2">
+              Results for '{query}':
+            </Header>
+            <Card.Group divided style={styles.card}>
+              {data.findBooks &&
+                data.findBooks.books &&
+                data.findBooks.books.map(book => (
+                  <BookTile key={book.id} book={book} />
+                ))}
+            </Card.Group>
           </Fragment>
         );
       }}
@@ -74,4 +76,4 @@ const styles = {
   header: {
     paddingLeft: 8
   }
-}
+};

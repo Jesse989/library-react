@@ -2,12 +2,11 @@ body > div,
 body > div > div,
 body > div > div > div.auth {
   height: 100%;
-
 }
 
 .auth {
   background-image: url('../assets/book_bg.jpg');
   background-size: cover;
-  height: 1824px;
+  height: auto;
   background-position: center;
 }

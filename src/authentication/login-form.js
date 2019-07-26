@@ -1,12 +1,18 @@
-
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Link } from '@reach/router';
-import { Container, Button, Form, Header, Message, Segment  } from 'semantic-ui-react';
+import {
+  Container,
+  Button,
+  Form,
+  Header,
+  Message,
+  Segment
+} from 'semantic-ui-react';
 
 export default class LoginForm extends Component {
   state = {
-    email: '' ,
-    password: '',
+    email: '',
+    password: ''
   };
 
   onChange = event => {
@@ -23,54 +29,54 @@ export default class LoginForm extends Component {
         password: this.state.password
       }
     });
-  }
+  };
 
   render() {
     return (
       <Segment style={styles.container}>
-        <Header style={styles.header} as='h2' textAlign='center'>
-           Login to your account
+        <Header style={styles.header} as="h2" textAlign="center">
+          Login to your account
         </Header>
-        <Form size='large' onSubmit={this.onSubmit}>
-            <Form.Input
-              style={styles.input}
-              label="Email:"
-              fluid
-              name="email"
-              icon='user'
-              iconPosition='left'
-              placeholder='Email address'
-              data-testid="login-input"
-              onChange={this.onChange}
-            />
-            <Form.Input
-              style={styles.input}
-              label="Password:"
-              fluid
-              name="password"
-              icon='lock'
-              iconPosition='left'
-              placeholder='At least 6 characters'
-              type='password'
-              data-testid="password-input"
-              onChange={this.onChange}
-            />
+        <Form size="large" onSubmit={this.onSubmit}>
+          <Form.Input
+            style={styles.input}
+            label="Email:"
+            fluid
+            name="email"
+            icon="user"
+            iconPosition="left"
+            placeholder="Email address"
+            data-testid="login-input"
+            onChange={this.onChange}
+          />
+          <Form.Input
+            style={styles.input}
+            label="Password:"
+            fluid
+            name="password"
+            icon="lock"
+            iconPosition="left"
+            placeholder="At least 6 characters"
+            type="password"
+            data-testid="password-input"
+            onChange={this.onChange}
+          />
 
-            <Button style={styles.button} fluid size='large' type="submit">
-              Login
-            </Button>
+          <Button style={styles.button} fluid size="large" type="submit">
+            Login
+          </Button>
         </Form>
-        { this.props.error && (
+        {this.props.error && (
           <Container textAlign="center">
-          <Message error>{this.props.error}</Message>
+            <Message error>{this.props.error}</Message>
           </Container>
         )}
         <Message>
-        <Container textAlign="center">
-        Need an account? <Link to='/signup'>Sign up</Link>
-        </Container>
+          <Container textAlign="center">
+            Need an account? <Link to="/signup">Sign up</Link>
+          </Container>
         </Message>
-        </Segment>
+      </Segment>
     );
   }
 }
@@ -82,6 +88,4 @@ const styles = {
   button: {
     backgroundColor: '#D4C18F'
   }
-
-
-}
+};
