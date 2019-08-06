@@ -1,24 +1,24 @@
-
 import React, { Component } from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Container } from 'semantic-ui-react';
 
 export default class PageContainer extends Component {
-
-
   render() {
     return (
-      <Grid verticalAlign='middle' centered style={{height: '100%'}}>
-        <Grid.Column style={styles.inner} >
-          { this.props.children }
-        </Grid.Column>
-      </Grid>
+      <Container style={styles.outer}>
+        <Grid verticalAlign="middle" centered>
+          <Grid.Column style={styles.inner}>{this.props.children}</Grid.Column>
+        </Grid>
+      </Container>
     );
   }
 }
 
 const styles = {
+  outer: {
+    minHeight: '100vh'
+  },
   inner: {
     maxWidth: 550,
-    margin: '14px'
+    margin: '14px auto'
   }
-}
+};
