@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Dimmer, Loader, Header, Card } from 'semantic-ui-react';
+import { Dimmer, Loader, Header, Card, Container } from 'semantic-ui-react';
 import { BookTile, Error } from '../components';
 
 import { Query } from 'react-apollo';
@@ -42,7 +42,11 @@ export default function Library() {
                   <BookTile key={book.id} book={book} />
                 ))
               ) : (
-                <p>You haven't saved any books yet</p>
+                <Container textAlign="center">
+                  <br />
+                  <h3>Oops, it looks like your library is empty!</h3>
+                  <p>Use the search to add books to your library</p>
+                </Container>
               )}
             </Card.Group>
           </Fragment>
